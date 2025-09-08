@@ -1,0 +1,86 @@
+{
+    "festas": [
+        {
+            "local": "Pegarinhos",
+            "day": "16",
+            "month": "Marco",
+            "month_number": 3,
+            "hour": 14,
+            "fat": 1,
+            "value": 300
+        },
+         {
+            "local": "Test 01",
+            "day": "22",
+            "month": "Marco",
+            "month_number": 3,
+            "hour": 14,
+            "fat": 0,
+            "value": 0
+        },
+         {
+            "local": "Test 02",
+            "day": "30",
+            "month": "Marco",
+            "month_number": 3,
+            "hour": 14,
+            "fat": 1,
+             "value": 10
+        },
+        {
+            "local": "Castelãos",
+            "day": "28",
+            "month": "Abril",
+            "month_number": 4,
+            "hour": 21,
+            "fat": 1,
+            "value": 20
+        },
+        {
+            "local": "Raiz do Monte",
+            "day": "20",
+            "month": "Julho",
+            "month_number": 7,
+            "hour": 0,
+            "fat": 0,
+            "value": 0
+        },
+        {
+            "local": "Cortinhas",
+            "day": "03",
+            "month": "Agosto",
+            "month_number": 8,
+            "hour": 16,
+            "fat": 1,
+            "value": 30
+        },
+        {
+            "local": "Lama de Arcos",
+            "day": "10",
+            "month": "Agosto",
+            "month_number": 8,
+            "hour": 21,
+            "fat": 0,
+            "value": 0
+        },
+        {
+            "local": "Santa Valha",
+            "day": "11",
+            "month": "Agosto",
+            "month_number": 8,
+            "hour": 0,
+            "fat": 1,
+            "value": 40
+        },
+        {
+            "local": "Vreia de Jales",
+            "day": "15",
+            "month": "Agosto",
+            "month_number": 8,
+            "hour": 0,
+            "fat": 0,
+            "value": 0
+        }
+       
+    ]
+ }

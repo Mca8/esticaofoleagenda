@@ -1,0 +1,59 @@
+{
+    "festas": [
+         {
+            "local": "Pegarinhos",
+            "day": "09",
+            "month": "Marco",
+            "month_number": 3,
+            "dinner": 0,
+            "hour": 13,
+            "min": 30,
+            "fat": 1,
+            "value": 0
+         },
+         {
+            "local": "São Vicente da Raia",
+            "day": "09",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 1,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 500
+        },
+        {
+            "local": "Pena longa",
+            "day": "10",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 500
+        },
+        {
+            "local": "Vilela Seca",
+            "day": "15",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 15,
+            "min": 30,
+            "fat": 1,
+            "value": 500
+        },
+        {
+            "local": "Perafita",
+            "day": "16",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 350
+        }
+    ]
+ }

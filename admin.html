@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calendar Estica o Fole - Admin</title>
+  <link rel="icon" href="esticaofole-favicon.jpg" sizes="32x32" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="w3-container">
+    <div class="w3-modal modal_fat">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span class="w3-button w3-display-topright close">&times;</span>
+          <div class="fat_value">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-container-wrapper">
+    <main>
+      <div class="calendar-container">
+        <div class="calendar-container__header">
+          <div class="d-flex justify-center">
+            <img src="logo.png" class="class-img" alt="Estica o Fole">
+          </div>
+          <!-- <h2 class="calendar-container__title"></h2> -->
+        </div>
+        <div class="count_festas">
+          <p>festas:</p>
+          <ul>
+            <li><p>feitas: <br><span class="c-done"></span></p></li>
+            <li><p>por fazer: <br><span class="c-open"></span></p></li>
+            <li><p>total: <br><span class="c-total"></span></p></li>
+          </ul>
+        </div>
+        <div class="count_festas_value"></div>
+      </div>
+      <div class="events-container containerJaneiro" style="display: none;">
+        <span class="events__title">Janeiro</span>
+        <ul class="events__list Janeiro"></ul>
+      </div>
+      <div class="events-container containerFevereiro" style="display: none;">
+        <span class="events__title">Fevereiro</span>
+        <ul class="events__list Fevereiro"></ul>
+      </div>
+      <div class="events-container containerMarco" style="display: none;">
+        <span class="events__title">Março</span>
+        <ul class="events__list Marco"></ul>
+      </div>
+      <div class="events-container containerAbril" style="display: none;">
+        <span class="events__title">Abril</span>
+        <ul class="events__list Abril"></ul>
+      </div>
+      <div class="events-container containerMaio" style="display: none;">
+        <span class="events__title">Maio</span>
+        <ul class="events__list Maio"></ul>
+      </div>
+      <div class="events-container containerJunho" style="display: none;">
+        <span class="events__title">Junho</span>
+        <ul class="events__list Junho"></ul>
+      </div>
+      <div class="events-container containerJulho" style="display: none;">
+        <span class="events__title">Julho</span>
+        <ul class="events__list Julho"></ul>
+      </div>
+      <div class="events-container containerAgosto" style="display: none;">
+        <span class="events__title">Agosto</span>
+        <ul class="events__list Agosto"></ul>
+      </div>
+      <div class="events-container containerSetembro" style="display: none;">
+        <span class="events__title">Setembro</span>
+        <ul class="events__list Setembro"></ul>
+      </div>
+      <div class="events-container containerOutubro" style="display: none;">
+        <span class="events__title">Outubro</span>
+        <ul class="events__list Outubro"></ul>
+      </div>
+      <div class="events-container containerNovembro" style="display: none;">
+        <span class="events__title">Novembro</span>
+        <ul class="events__list Novembro"></ul>
+      </div>
+      <div class="events-container containerDezembro" style="display: none;">
+        <span class="events__title">Dezembro</span>
+        <ul class="events__list Dezembro"></ul>
+      </div>
+    </main>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script>
+
+  jQuery(function() {
+
+
+    var dateIn = new Date();
+    let dateMonth = dateIn.getMonth()+1;
+    let day = dateIn.getDate();
+    let count_festas_done = 0;
+    let count_festas_open = 0;
+    let count_festas_total = 0;
+    let festas_total_value = 0;
+
+
+
+    var festas = [];
+
+    jQuery.getJSON('festas_general.json', function(data) {
+
+
+      jQuery.each(data.festas, function(i, f) {
+
+        if(f.hour === 0){
+          hour = '<span class="events__tag events__tag--highlighted">Hora ainda não definida</span>';
+        }else{
+          hour = '<span class="events__tag date_big">'+f.hour+'H'+f.min+'</span>';
+        }
+
+        if(f.fat === 0){
+          fat = '';
+        }else{
+          fat = '<button class="btn" data-value="'+f.value+'"><span class="events__tag date_big fat_block">FAT</span></button>';
+        }
+
+        var tblRow = '<li class="events__item day-'+f.day+'"><div class="events__item--left"><span class="events__name">'+ f.day +' - '+ f.month +'</span><span class="events__date">'+ f.local +'</span></div>'+hour+' '+fat+'</li>';
+
+
+          // ADD to content
+          jQuery(tblRow).appendTo('.container'+f.month+' .events__list.'+f.month+'');
+
+          // Verify dates to last with now date
+          if(f.month_number < dateMonth){
+            jQuery('.container'+f.month).css('display', 'none');
+            jQuery('.container'+f.month).find('.day-'+f.day).css('display', 'none').addClass('festa-done');
+
+          }else{
+            if(f.month_number == dateMonth && f.day <= day){
+              jQuery('.container'+f.month).find('.day-'+f.day).css('display', 'none').addClass('festa-done');
+            }else if(f.month_number == dateMonth && f.day > day){
+              jQuery('.container'+f.month).css('display', 'block');
+              jQuery('.container'+f.month).find('.day-'+f.day).addClass('festa-open');
+            }else if(f.month_number > dateMonth){
+              jQuery('.container'+f.month).css('display', 'block');
+              jQuery('.container'+f.month).find('.day-'+f.day).addClass('festa-open');
+            }
+          }
+
+          count_festas_done = jQuery('.festa-done').length;
+          count_festas_open = jQuery('.festa-open').length;
+          festas_total_value += f.value;
+
+          jQuery('.btn').click(function(){
+            fat_value = jQuery(this).attr('data-value');
+            jQuery('.modal_fat').find('.fat_value').html('<p>'+fat_value+'€</p>');
+            jQuery('.modal_fat').css('display', 'block');
+          });
+      });
+
+      count_festas_total = count_festas_done + count_festas_open;
+
+      jQuery('.count_festas').find('.c-total').text(count_festas_total);
+      jQuery('.count_festas').find('.c-done').text(count_festas_done);
+      jQuery('.count_festas').find('.c-open').text(count_festas_open);
+      jQuery('.count_festas_value').text(festas_total_value);
+
+    });
+
+    jQuery('.modal_fat .close').click(function(){
+      jQuery('.modal_fat').css('display', 'none');
+    });
+
+  });
+  </script>
+</body>
+</html>
