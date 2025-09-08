@@ -186,6 +186,18 @@
             "min": "00",
             "fat": 1,
             "value": 400
+        },
+        {
+            "local": "Candedo",
+            "day": "28",
+            "month": "Setembro",
+            "month_number": 9,
+            "dinner": 0,
+            "hour": 15,
+            "min": "00",
+            "fat": 1,
+            "value": 350
         }
     ]
  }
+
