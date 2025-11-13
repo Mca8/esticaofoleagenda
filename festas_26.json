@@ -43,17 +43,7 @@
             "min": 30,
             "fat": 1,
             "value": 0
-        },
-        {
-            "local": "Perafita",
-            "day": "16",
-            "month": "Agosto",
-            "month_number": 8,
-            "dinner": 0,
-            "hour": 0,
-            "min": 0,
-            "fat": 1,
-            "value": 0
         }
     ]
  }
+
