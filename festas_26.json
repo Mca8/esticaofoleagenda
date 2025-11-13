@@ -1,0 +1,59 @@
+{
+    "festas": [
+         {
+            "local": "Ousilhão",
+            "day": "08",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 0
+         },
+         {
+            "local": "Pena longa",
+            "day": "09",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 0
+        },
+        {
+            "local": "Mascarenhas",
+            "day": "13",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 18,
+            "min": 30,
+            "fat": 1,
+            "value": 0
+        },        
+        {
+            "local": "Vilela Seca",
+            "day": "15",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 15,
+            "min": 30,
+            "fat": 1,
+            "value": 0
+        },
+        {
+            "local": "Perafita",
+            "day": "16",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 0
+        }
+    ]
+ }
