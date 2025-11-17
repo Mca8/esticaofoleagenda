@@ -1,8 +1,8 @@
 {
     "festas": [
         {
-            "local": "Tanha - Nogueira VR",
-            "day": "08",
+            "local": "Tanha - Nogueira Vila Real",
+            "day": "01",
             "month": "Agosto",
             "month_number": 8,
             "dinner": 0,
@@ -57,5 +57,6 @@
         }
     ]
  }
+
 
 
