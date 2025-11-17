@@ -1,5 +1,16 @@
 {
     "festas": [
+        {
+            "local": "Tanha - Nogueira VR",
+            "day": "08",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 16,
+            "min": "00",
+            "fat": 1,
+            "value": 400
+         },
          {
             "local": "Ousilhão",
             "day": "08",
@@ -46,4 +57,5 @@
         }
     ]
  }
+
 
