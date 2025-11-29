@@ -11,6 +11,17 @@
             "fat": 1,
             "value": 400
          },
+        {
+            "local": "Vale de Gouvinhas",
+            "day": "07",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 22,
+            "min": "00",
+            "fat": 1,
+            "value": 500
+         },
          {
             "local": "Ousilhão",
             "day": "08",
@@ -57,6 +68,7 @@
         }
     ]
  }
+
 
 
 
