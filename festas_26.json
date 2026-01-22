@@ -65,9 +65,21 @@
             "min": 30,
             "fat": 1,
             "value": 0
-        }
+        },
+        {
+            "local": "Castanheiro do Norte",
+            "day": "04",
+            "month": "Outubro",
+            "month_number": 10,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 450
+         },
     ]
  }
+
 
 
 
