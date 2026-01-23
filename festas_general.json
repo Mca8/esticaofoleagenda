@@ -31,7 +31,7 @@
             "hour": 0,
             "min": 0,
             "fat": 1,
-            "value": 0
+            "value": 500
          },
          {
             "local": "Pena longa",
@@ -42,7 +42,7 @@
             "hour": 0,
             "min": 0,
             "fat": 1,
-            "value": 0
+            "value": 500
         },
         {
             "local": "Mascarenhas",
@@ -53,7 +53,7 @@
             "hour": 18,
             "min": 30,
             "fat": 1,
-            "value": 0
+            "value": 500
         },        
         {
             "local": "Vilela Seca",
@@ -64,7 +64,7 @@
             "hour": 15,
             "min": 30,
             "fat": 1,
-            "value": 0
+            "value": 500
         },
         {
             "local": "Castanheiro do Norte",
@@ -79,6 +79,7 @@
          }    
     ]
  }
+
 
 
 
