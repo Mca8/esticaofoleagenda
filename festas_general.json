@@ -1,6 +1,17 @@
 {
     "festas": [
         {
+            "local": "Mascanho",
+            "day": "12",
+            "month": "Abril",
+            "month_number": 4,
+            "dinner": 0,
+            "hour": 15,
+            "min": 30,
+            "fat": 0,
+            "value": 0
+         },
+        {
             "local": "Tanha - Nogueira Vila Real",
             "day": "01",
             "month": "Agosto",
@@ -79,6 +90,7 @@
          }    
     ]
  }
+
 
 
 
