@@ -1,6 +1,17 @@
 {
     "festas": [
         {
+            "local": "Murça",
+            "day": "14",
+            "month": "Março",
+            "month_number": 3,
+            "dinner": 0,
+            "hour": "00",
+            "min": "00",
+            "fat": 0,
+            "value": 0
+         },
+        {
             "local": "Mascanho",
             "day": "12",
             "month": "Abril",
@@ -8,6 +19,17 @@
             "dinner": 0,
             "hour": 15,
             "min": 30,
+            "fat": 0,
+            "value": 0
+         },
+        {
+            "local": "Murça",
+            "day": "08",
+            "month": "Maio",
+            "month_number": 5,
+            "dinner": 0,
+            "hour": "00",
+            "min": "00",
             "fat": 0,
             "value": 0
          },
@@ -90,6 +112,7 @@
          }    
     ]
  }
+
 
 
 
