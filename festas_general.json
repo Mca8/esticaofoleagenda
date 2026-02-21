@@ -1,4 +1,4 @@
-{
+w{
     "festas": [
         {
             "local": "Murça",
@@ -6,8 +6,8 @@
             "month": "Marco",
             "month_number": 3,
             "dinner": 0,
-            "hour": "00",
-            "min": "00",
+            "hour": 0,
+            "min": 0,
             "fat": 0,
             "value": 0
          },
@@ -28,8 +28,8 @@
             "month": "Maio",
             "month_number": 5,
             "dinner": 0,
-            "hour": "00",
-            "min": "00",
+            "hour": 0,
+            "min": 0,
             "fat": 0,
             "value": 0
          },
@@ -112,6 +112,7 @@
          }    
     ]
  }
+
 
 
 
