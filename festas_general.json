@@ -6,8 +6,8 @@
             "month": "Marco",
             "month_number": 3,
             "dinner": 0,
-            "hour": 0,
-            "min": 0,
+            "hour": 08,
+            "min": 30,
             "fat": 0,
             "value": 0
          },
@@ -112,6 +112,7 @@
          }    
     ]
  }
+
 
 
 
