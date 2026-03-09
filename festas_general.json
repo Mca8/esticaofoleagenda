@@ -45,6 +45,17 @@
             "value": 400
          },
         {
+            "local": "Vilares",
+            "day": "05",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 17,
+            "min": "00",
+            "fat": 1,
+            "value": 400
+         },
+        {
             "local": "Vale de Gouvinhas",
             "day": "07",
             "month": "Agosto",
@@ -112,6 +123,7 @@
          }    
     ]
  }
+
 
 
 
