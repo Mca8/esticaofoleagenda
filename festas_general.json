@@ -8,8 +8,8 @@
             "dinner": 0,
             "hour": 8,
             "min": 30,
-            "fat": 0,
-            "value": 0
+            "fat": 1,
+            "value": 400
          },
         {
             "local": "Mascanho",
@@ -20,7 +20,7 @@
             "hour": 15,
             "min": 30,
             "fat": 0,
-            "value": 0
+            "value": 250
          },
         {
             "local": "Murça",
@@ -30,8 +30,19 @@
             "dinner": 0,
             "hour": 0,
             "min": 0,
-            "fat": 0,
-            "value": 0
+            "fat": 1,
+            "value": 400
+         },
+         {
+            "local": "Quintã de Jales",
+            "day": "03",
+            "month": "Julho",
+            "month_number": 7,
+            "dinner": 0,
+            "hour": 21,
+            "min": "00",
+            "fat": 1,
+            "value": 400
          },
         {
             "local": "Tanha - Nogueira Vila Real",
