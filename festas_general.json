@@ -34,6 +34,17 @@
             "value": 400
          },
          {
+            "local": "Rio Bom",
+            "day": "31",
+            "month": "Maio",
+            "month_number": 5,
+            "dinner": 0,
+            "hour": "manha",
+            "min": "00",
+            "fat": 1,
+            "value": 400
+         },
+         {
             "local": "Quintã de Jales",
             "day": "03",
             "month": "Julho",
@@ -134,18 +145,4 @@
          }    
     ]
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
