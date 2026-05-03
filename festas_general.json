@@ -33,6 +33,17 @@
             "fat": 1,
             "value": 400
          },
+        {
+            "local": "Rio Mau",
+            "day": "16",
+            "month": "Maio",
+            "month_number": 5,
+            "dinner": 0,
+            "hour": 20,
+            "min": 30,
+            "fat": 1,
+            "value": 500
+         },
          {
             "local": "Murça",
             "day": "31",
