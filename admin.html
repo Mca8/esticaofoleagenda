@@ -42,7 +42,7 @@
             <li><p>total: <br><span class="c-total"></span></p></li>
           </ul>
         </div>
-        <div class="count_festas_value"></div>
+        <div class="count_festas_value"><i class="fa-solid fa-sack-dollar" style="padding-right: 5px;"></i></div>
       </div>
       <div class="events-container containerJaneiro" style="display: none;">
         <span class="events__title">Janeiro</span>
@@ -129,7 +129,7 @@
         if(f.fat === 0){
           fat = '';
         }else{
-          fat = '<button class="btn" data-value="'+f.value+'"><span class="events__tag date_big fat_block" style="display: block;width:auto;"><i class="fa-solid fa-sack-dollar"></i></span></button>';
+          fat = '<button class="btn" data-value="'+f.value+'"><span class="events__tag date_big fat_block" style="display: block;width:auto;padding:3px 8px;"><i class="fa-solid fa-sack-dollar"></i></span></button>';
         }
 
         var tblRow = '<li class="events__item day-'+f.day+'"><div class="events__item--left"><span class="events__name">'+ f.day +' - '+ f.month +'</span><span class="events__date">'+ f.local +'</span></div>'+hour+' '+fat+'</li>';
