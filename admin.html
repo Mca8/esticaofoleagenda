@@ -120,7 +120,7 @@
       jQuery.each(data.festas, function(i, f) {
 
         if(f.hour === 0){
-          hour = '<span class="events__tag events__tag--highlighted">Hora ainda não definida</span>';
+          hour = '<span class="events__tag events__tag--highlighted"><i class="fa-solid fa-hourglass" style="font-size: 18px;padding: 0 8px 0 10px;"></i><span style="padding: 0 5px 0 0;">Hora ainda não definida</span></span>';
         }else{
           hour = '<span class="events__tag date_big">'+f.hour+'H'+f.min+'</span>';
         }
@@ -128,7 +128,7 @@
         if(f.fat === 0){
           fat = '';
         }else{
-          fat = '<button class="btn" data-value="'+f.value+'"><span class="events__tag date_big fat_block">FAT</span></button>';
+          fat = '<button class="btn" data-value="'+f.value+'"><span class="events__tag date_big fat_block"><i class="fa-solid fa-sack-dollar"></i></span></button>';
         }
 
         var tblRow = '<li class="events__item day-'+f.day+'"><div class="events__item--left"><span class="events__name">'+ f.day +' - '+ f.month +'</span><span class="events__date">'+ f.local +'</span></div>'+hour+' '+fat+'</li>';
