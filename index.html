@@ -97,7 +97,7 @@
       jQuery.each(data.festas, function(i, f) {
 
         if(f.hour === 0){
-          hour = '<span class="events__tag events__tag--highlighted">Hora ainda não definida</span>';
+          hour = '<span class="events__tag events__tag--highlighted"><i class="fa-solid fa-hourglass" style="font-size: 18px;padding: 0 8px 0 10px;"></i><span style="padding: 0 5px 0 0;">Hora ainda não definida</span></span>';
         }else{
           hour = '<span class="events__tag date_big">'+f.hour+'H'+f.min+'</span>';
         }
@@ -138,5 +138,4 @@
   </script>
 </body>
 </html>
-
 
