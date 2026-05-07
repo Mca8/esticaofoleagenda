@@ -8,6 +8,7 @@
   <link rel="icon" href="esticaofole-favicon.jpg" sizes="32x32" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -128,7 +129,7 @@
         if(f.fat === 0){
           fat = '';
         }else{
-          fat = '<button class="btn" data-value="'+f.value+'"><span class="events__tag date_big fat_block"><i class="fa-solid fa-sack-dollar"></i></span></button>';
+          fat = '<button class="btn" data-value="'+f.value+'"><span class="events__tag date_big fat_block" style="display: block;width:auto;"><i class="fa-solid fa-sack-dollar"></i></span></button>';
         }
 
         var tblRow = '<li class="events__item day-'+f.day+'"><div class="events__item--left"><span class="events__name">'+ f.day +' - '+ f.month +'</span><span class="events__date">'+ f.local +'</span></div>'+hour+' '+fat+'</li>';
