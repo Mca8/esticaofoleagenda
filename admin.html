@@ -37,12 +37,12 @@
         <div class="count_festas">
           <p>festas:</p>
           <ul>
-            <li><p><i class="fa-solid fa-square-check" style="padding-right:5px;"></i> feitas: <br><span class="c-done"></span></p></li>
+            <li><p><i class="fa-regular fa-calendar-check" style="padding-right:5px;"></i> feitas: <br><span class="c-done"></span></p></li>
             <li><p><i class="fa-solid fa-hourglass" style="padding-right:5px;"></i> por fazer: <br><span class="c-open"></span></p></li>
-            <li><p>total: <br><span class="c-total"></span></p></li>
+            <li><p><i class="fa-solid fa-square-check" style="padding-right:5px;"></i> total: <br><span class="c-total"></span></p></li>
           </ul>
         </div>
-        <div class="count_festas_value"><i class="fa-solid fa-sack-dollar" style="padding-right: 5px;"></i><span></span></div>
+        <div class="count_festas_value not_active"><i class="fa-solid fa-sack-dollar" style="padding-right: 5px;"></i><span style="display: none;"></span></div>
       </div>
       <div class="events-container containerJaneiro" style="display: none;">
         <span class="events__title">Janeiro</span>
@@ -173,6 +173,18 @@
       jQuery('.count_festas').find('.c-open').text(count_festas_open);
       jQuery('.count_festas_value span').text(festas_total_value);
 
+    });
+
+    jQuery('.count_festas_value').click(function(){
+      if($(this).hasClass('not_active')){
+        jQuery(this).find('span').css('display', 'block');
+        jQuery(this).removeClass('not_active');
+        jQuery(this).addClass('is_active');
+      }else if($(this).hasClass('is_active')){
+        jQuery(this).find('span').css('display', 'none');
+        jQuery(this).removeClass('is_active');
+        jQuery(this).addClass('not_active');
+      }
     });
 
     jQuery('.modal_fat .close').click(function(){
