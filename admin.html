@@ -176,10 +176,12 @@
 
     jQuery('.count_festas_value').click(function(){
       if($(this).hasClass('not_active')){
+        jQuery(this).find('i').css('color', '#00000085');
         jQuery(this).find('span').css('display', 'inline-block');
         jQuery(this).removeClass('not_active');
         jQuery(this).addClass('is_active');
       }else if($(this).hasClass('is_active')){
+        jQuery(this).find('i').css('color', '#000000');
         jQuery(this).find('span').css('display', 'none');
         jQuery(this).removeClass('is_active');
         jQuery(this).addClass('not_active');
