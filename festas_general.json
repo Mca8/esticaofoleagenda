@@ -56,7 +56,18 @@
             "value": 400
          },
         {
-            "local": "Codeçais- Carrazeda de Ansiães ",
+            "local": "Murça",
+            "day": "07",
+            "month": "Junho",
+            "month_number": 6,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 400
+         },
+        {
+            "local": "Codeçais- Carrazeda de Ansiães",
             "day": "21",
             "month": "Junho",
             "month_number": 6,
