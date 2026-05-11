@@ -28,6 +28,9 @@
   .justify-center{
     justify-content: center;
   }
+  .align-items-center {
+    align-items: center;
+  }
   .mock-up-link {
     display: none;
   }
