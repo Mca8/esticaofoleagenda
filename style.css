@@ -334,6 +334,7 @@
     font-size: 18px;
   }
   .events-container {
+    clear: both;
     padding: 0 15px;
   }
   
