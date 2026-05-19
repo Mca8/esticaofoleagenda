@@ -44,6 +44,17 @@
             "fat": 1,
             "value": 500
          },
+        {
+            "local": "Mós de Celas",
+            "day": "24",
+            "month": "Maio",
+            "month_number": 5,
+            "dinner": 0,
+            "hour": 16,
+            "min": "00",
+            "fat": 1,
+            "value": 500
+         },
          {
             "local": "Murça",
             "day": "31",
