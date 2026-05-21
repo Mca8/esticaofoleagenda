@@ -33,7 +33,7 @@
             <img src="logo.png" class="class-img" alt="Estica o Fole">
           </div>
         </div>
-        <div class="count_festas" style="padding-top: 20px;">
+        <div class="count_festas">
           <ul>
             <li class="align-items-center d-flex justify-center" style="background: #3cb371;">
                 <div style="padding: 10px 5px;">
@@ -61,7 +61,7 @@
             </li>
           </ul>
         </div>
-        <div class="count_festas_value not_active" style="cursor: pointer;"><i class="fa-solid fa-sack-dollar" style="padding-right: 5px;"></i><span style="display: none;"></span></div>
+        <div class="count_festas_value not_active" style="cursor: pointer;"><i class="fa-solid fa-eye-slash" style="padding-right: 5px;"></i><span style="display: none;"></span></div>
       </div>
       <div class="events-container containerJaneiro" style="display: none;">
         <span class="events__title">Janeiro</span>
@@ -196,12 +196,14 @@
 
     jQuery('.count_festas_value').click(function(){
       if($(this).hasClass('not_active')){
-        jQuery(this).find('i').css('color', '#00000085');
+        jQuery(this).find('i').removeClass('fa-eye-slash');
+        jQuery(this).find('i').addClass('fa-eye');
         jQuery(this).find('span').css('display', 'inline-block');
         jQuery(this).removeClass('not_active');
         jQuery(this).addClass('is_active');
       }else if($(this).hasClass('is_active')){
-        jQuery(this).find('i').css('color', '#000000');
+        jQuery(this).find('i').removeClass('fa-eye');
+        jQuery(this).find('i').addClass('fa-eye-slash');
         jQuery(this).find('span').css('display', 'none');
         jQuery(this).removeClass('is_active');
         jQuery(this).addClass('not_active');
