@@ -20,7 +20,7 @@
     height: auto;
   }
   .class-img{
-    max-width: 35%;
+    max-width: 55%;
   }
   .d-flex {
     display: flex;
@@ -100,13 +100,14 @@
   
   .calendar-container {
     background-color: #fff;
-    padding: 16px;
     margin-bottom: 24px;
   }
   .calendar-container__header {
     display: flex;
     justify-content: space-between;
-  }
+    background: #f0efef;
+    padding: 16px;
+}
   .calendar-container__btn {
     background: transparent;
     border: 0;
