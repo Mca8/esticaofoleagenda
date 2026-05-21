@@ -403,3 +403,25 @@ span.events__tag.events__tag--dinner {
     font-size: 28px;
     width: 80px;
 }
+.reportorios {
+    background: #f0efef;
+    margin: 0 0 15px;
+}
+.events-download {
+    padding: 10px;
+    font-size: 20px;
+    width: auto;
+    margin-left: 0;
+}
+.events-download a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.events-download i{
+    font-size: 25px;
+    margin-right: 5px;
+}
+.donw_div {
+    padding: 10px;
+}
+
