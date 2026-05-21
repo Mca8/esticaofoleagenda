@@ -100,7 +100,7 @@
   
   .calendar-container {
     background-color: #fff;
-    margin-bottom: 24px;
+    margin-bottom: 5px;
   }
   .calendar-container__header {
     display: flex;
@@ -409,15 +409,15 @@ span.events__tag.events__tag--dinner {
     margin: 0 0 15px;
 }
 .events-download {
-    padding: 10px;
-    font-size: 20px;
+    padding: 8px 20px;
+    font-size: 18px;
     width: auto;
     margin-left: 0;
     text-decoration: none;
     color: #ffffff;
 }
 .events-download i{
-    font-size: 25px;
+    font-size: 22px;
     margin-right: 5px;
 }
 .donw_div {
