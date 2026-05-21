@@ -414,7 +414,8 @@ span.events__tag.events__tag--dinner {
     width: auto;
     margin-left: 0;
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
+    background: #fdca40;
 }
 .events-download i{
     font-size: 22px;
