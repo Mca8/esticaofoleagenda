@@ -177,6 +177,17 @@
             "value": 500
         },
         {
+            "local": "Carrazedo Montenegro",
+            "day": "11",
+            "month": "Setembro",
+            "month_number": 9,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 400
+        },
+        {
             "local": "Castanheiro do Norte",
             "day": "04",
             "month": "Outubro",
