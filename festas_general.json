@@ -84,7 +84,7 @@
             "month_number": 6,
             "dinner": 0,
             "hour": 14,
-            "min": 30,
+            "min": "00",
             "fat": 1,
             "value": 400
          },
