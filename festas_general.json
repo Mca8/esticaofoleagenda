@@ -99,6 +99,17 @@
             "fat": 1,
             "value": 400
          },
+        {
+            "local": "Vilarinho da Castanheira",
+            "day": "04",
+            "month": "Julho",
+            "month_number": 7,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 450
+         },
          {
             "local": "Carva",
             "day": "31",
