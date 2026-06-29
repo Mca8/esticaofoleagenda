@@ -1,4 +1,4 @@
-{
+w{
     "festas": [
         {
             "local": "Murça",
@@ -104,7 +104,7 @@
             "day": "04",
             "month": "Julho",
             "month_number": 7,
-            "dinner": 0,
+            "dinner": 1,
             "hour": 16,
             "min": "00",
             "fat": 1,
