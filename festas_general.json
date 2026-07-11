@@ -165,6 +165,17 @@
             "fat": 1,
             "value": 500
          },
+        {
+            "local": "Zebras",
+            "day": "09",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 15,
+            "min": 30,
+            "fat": 1,
+            "value": 400
+        },
          {
             "local": "Pena longa",
             "day": "09",
@@ -210,7 +221,7 @@
             "value": 500
         },
         {
-            "local": "Carrazedo Montenegro",
+            "local": "Rio Bom",
             "day": "11",
             "month": "Setembro",
             "month_number": 9,
