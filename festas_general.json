@@ -182,8 +182,8 @@
             "month": "Agosto",
             "month_number": 8,
             "dinner": 0,
-            "hour": 0,
-            "min": 0,
+            "hour": 19,
+            "min": "00",
             "fat": 1,
             "value": 400
          },
