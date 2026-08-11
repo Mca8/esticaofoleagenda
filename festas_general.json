@@ -197,7 +197,18 @@
             "min": 30,
             "fat": 1,
             "value": 500
-        },        
+        },   
+        {
+            "local": "Fornos de Pinhal",
+            "day": "14",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 19,
+            "min": "00",
+            "fat": 1,
+            "value": 650
+        },
         {
             "local": "Vilela Seca",
             "day": "15",
