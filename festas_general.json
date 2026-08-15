@@ -232,6 +232,17 @@
             "value": 400
         },
         {
+            "local": "Aveleda - Bragança",
+            "day": "12",
+            "month": "Setembro",
+            "month_number": 9,
+            "dinner": 0,
+            "hour": 17,
+            "min": "00",
+            "fat": 1,
+            "value": 500
+        },
+        {
             "local": "Castanheiro do Norte",
             "day": "04",
             "month": "Outubro",
