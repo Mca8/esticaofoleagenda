@@ -1,27 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Adicionar Festa - Estica o Fole</title>
 
-    <meta
-        http-equiv="X-UA-Compatible"
-        content="ie=edge"
-    >
-
-    <title>Backoffice - Estica o Fole</title>
-
-    <link
-        rel="icon"
-        href="esticaofole-favicon.jpg"
-        sizes="32x32"
-    >
+    <link rel="icon" href="esticaofole-favicon.jpg" sizes="32x32">
 
     <link
         href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700"
@@ -33,599 +18,287 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     >
 
-
     <style>
-
         * {
             box-sizing: border-box;
         }
 
-
         body {
-
             margin: 0;
-
             padding: 20px;
-
-            font-family:
-                Montserrat,
-                Arial,
-                sans-serif;
-
+            font-family: Montserrat, Arial, sans-serif;
             background: #f4f4f4;
-
             color: #222;
-
         }
-
 
         .container {
-
-            width: 100%;
-
-            max-width: 700px;
-
+            max-width: 600px;
             margin: 0 auto;
-
         }
-
-
-        /* =========================
-           HEADER
-        ========================= */
 
         .header {
-
             text-align: center;
-
             margin-bottom: 25px;
-
         }
-
 
         .logo {
-
-            max-width: 180px;
-
+            max-width: 160px;
             width: 70%;
-
             height: auto;
-
             margin-bottom: 10px;
-
         }
-
 
         h1 {
-
             margin: 5px 0;
-
             font-size: 24px;
-
         }
 
-
-        .subtitle {
-
-            margin: 0;
-
-            color: #777;
-
-            font-size: 14px;
-
-        }
-
-
-        /* =========================
-           TOKEN
-        ========================= */
-
-        .token-box {
-
-            background: white;
-
+        .box {
+            background: #fff;
             padding: 20px;
-
-            margin-bottom: 25px;
-
             border-radius: 12px;
-
-            box-shadow:
-                0 2px 10px
-                rgba(0,0,0,.08);
-
+            box-shadow: 0 2px 10px rgba(0,0,0,.08);
         }
-
-
-        /* =========================
-           FESTA
-        ========================= */
-
-        .festa {
-
-            background: white;
-
-            padding: 20px;
-
-            margin-bottom: 20px;
-
-            border-radius: 12px;
-
-            box-shadow:
-                0 2px 10px
-                rgba(0,0,0,.08);
-
-        }
-
-
-        .festa h3 {
-
-            margin:
-                0
-                0
-                15px
-                0;
-
-            padding-bottom: 10px;
-
-            border-bottom:
-                1px solid #eee;
-
-            font-size: 18px;
-
-        }
-
-
-        /* =========================
-           LABEL
-        ========================= */
 
         label {
-
             display: block;
-
             margin-top: 15px;
-
             margin-bottom: 6px;
-
             font-size: 13px;
-
             font-weight: 600;
-
             color: #555;
-
         }
-
-
-        /* =========================
-           INPUTS
-        ========================= */
 
         input,
         select {
-
             width: 100%;
-
             height: 48px;
-
-            padding:
-                0
-                12px;
-
-            border:
-                1px solid #ddd;
-
+            padding: 0 12px;
+            border: 1px solid #ddd;
             border-radius: 7px;
-
-            background: white;
-
-            font-family:
-                Montserrat,
-                Arial,
-                sans-serif;
-
+            background: #fff;
+            font-family: Montserrat, Arial, sans-serif;
             font-size: 16px;
-
-            color: #222;
-
-            outline: none;
-
         }
-
-
-        input:focus,
-        select:focus {
-
-            border-color: #222;
-
-        }
-
-
-        /* =========================
-           ROW
-        ========================= */
 
         .row {
-
             display: flex;
-
             gap: 12px;
-
         }
-
 
         .row > div {
-
             flex: 1;
-
-            min-width: 0;
-
         }
-
-
-        /* =========================
-           BUTTONS
-        ========================= */
 
         button {
-
             width: 100%;
-
-            min-height: 50px;
-
-            padding:
-                12px
-                15px;
-
-            margin-top: 15px;
-
+            min-height: 52px;
+            margin-top: 20px;
             border: 0;
-
             border-radius: 8px;
-
-            font-family:
-                Montserrat,
-                Arial,
-                sans-serif;
-
-            font-size: 15px;
-
-            font-weight: 700;
-
-            cursor: pointer;
-
-        }
-
-
-        button:active {
-
-            transform:
-                scale(.98);
-
-        }
-
-
-        /* TOKEN */
-
-        .token-save {
-
-            background: #333;
-
-            color: white;
-
-        }
-
-
-        /* ADICIONAR */
-
-        .add {
-
-            background: #222;
-
-            color: white;
-
+            font-family: Montserrat, Arial, sans-serif;
             font-size: 16px;
-
+            font-weight: 700;
+            cursor: pointer;
         }
-
-
-        /* GUARDAR */
 
         .save {
-
             background: #198754;
-
             color: white;
-
-            font-size: 18px;
-
-            min-height: 58px;
-
         }
 
-
-        /* ELIMINAR */
-
-        .delete {
-
-            margin-top: 25px;
-
-            background: #dc3545;
-
+        .token-save {
+            background: #333;
             color: white;
-
         }
-
-
-        /* =========================
-           STATUS
-        ========================= */
 
         .status {
-
-            margin:
-                20px
-                0;
-
-            padding: 10px;
-
-            text-align: center;
-
-            font-size: 15px;
-
-            font-weight: 600;
-
-        }
-
-
-        /* =========================
-           ACTIONS
-        ========================= */
-
-        .actions {
-
             margin-top: 20px;
-
-            margin-bottom: 40px;
-
+            text-align: center;
+            font-weight: 600;
         }
-
-
-        /* =========================
-           VOLTAR AGENDA
-        ========================= */
 
         .agenda-link {
-
             display: block;
-
-            margin-top: 20px;
-
+            margin-top: 25px;
             text-align: center;
-
             color: #555;
-
             text-decoration: none;
-
-            font-size: 14px;
-
             font-weight: 600;
-
         }
-
-
-        .agenda-link i {
-
-            margin-right: 5px;
-
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
 
         @media(max-width: 500px) {
-
             body {
-
                 padding: 12px;
-
             }
 
-
-            .festa,
-            .token-box {
-
+            .box {
                 padding: 16px;
-
-                border-radius: 10px;
-
             }
-
-
-            .logo {
-
-                max-width: 150px;
-
-            }
-
-
-            h1 {
-
-                font-size: 21px;
-
-            }
-
-
-            input,
-            select {
-
-                font-size: 16px;
-
-            }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
 <div class="container">
 
-
-    <!-- =========================
-         HEADER
-    ========================== -->
-
     <div class="header">
+        <img src="logo.png" class="logo" alt="Estica o Fole">
 
-        <img
-            src="logo.png"
-            class="logo"
-            alt="Estica o Fole"
-        >
-
-        <h1>
-            Gestão da Agenda
-        </h1>
-
-        <p class="subtitle">
-            Backoffice Estica o Fole
-        </p>
-
+        <h1>Adicionar Festa</h1>
     </div>
 
-
-
-    <!-- =========================
-         TOKEN GITHUB
-    ========================== -->
-
-    <div class="token-box">
+    <div class="box">
 
         <label for="githubToken">
-
-            <i class="fa-brands fa-github"></i>
-
             Token GitHub
-
         </label>
-
 
         <input
             type="password"
             id="githubToken"
             placeholder="github_pat_..."
-            autocomplete="off"
         >
-
 
         <button
             type="button"
             class="token-save"
             onclick="guardarToken()"
         >
-
-            <i class="fa-solid fa-key"></i>
-
-            Guardar token neste dispositivo
-
+            Guardar token
         </button>
 
+        <label for="local">
+            Local
+        </label>
 
-    </div>
-
-
-
-    <!-- =========================
-         LISTA DE FESTAS
-    ========================== -->
-
-    <div id="festas">
-
-        <!--
-            As festas são adicionadas
-            automaticamente pelo
-            backoffice.js
-        -->
-
-    </div>
-
-
-
-    <!-- =========================
-         BOTÕES
-    ========================== -->
-
-    <div class="actions">
-
-
-        <button
-            type="button"
-            class="add"
-            onclick="adicionarFesta()"
+        <input
+            type="text"
+            id="local"
+            placeholder="Ex: Murça"
         >
 
-            <i class="fa-solid fa-plus"></i>
+        <div class="row">
 
-            Adicionar Festa
+            <div>
+                <label for="day">Dia</label>
 
-        </button>
+                <input
+                    type="number"
+                    id="day"
+                    min="1"
+                    max="31"
+                >
+            </div>
 
+            <div>
+                <label for="month">Mês</label>
 
+                <select id="month">
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div>
+                <label for="hour">Hora</label>
+
+                <input
+                    type="number"
+                    id="hour"
+                    min="0"
+                    max="23"
+                    value="0"
+                >
+            </div>
+
+            <div>
+                <label for="min">Minutos</label>
+
+                <input
+                    type="number"
+                    id="min"
+                    min="0"
+                    max="59"
+                    value="0"
+                >
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div>
+                <label for="dinner">Jantar</label>
+
+                <select id="dinner">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="fat">FAT</label>
+
+                <select id="fat">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+
+        </div>
+
+        <label for="sound">Som</label>
+
+        <select id="sound">
+            <option value="false">Sem som</option>
+            <option value="true">Com som</option>
+        </select>
+
+        <label for="value">Valor €</label>
+
+        <input
+            type="number"
+            id="value"
+            min="0"
+            value="0"
+        >
 
         <button
             type="button"
             class="save"
-            onclick="guardarGitHub()"
+            onclick="adicionarFestaGitHub()"
         >
-
-            <i class="fa-solid fa-floppy-disk"></i>
-
-            Guardar alterações
-
+            <i class="fa-solid fa-plus"></i>
+            Adicionar festa
         </button>
 
-
-
-        <div
-            id="status"
-            class="status"
-        ></div>
-
-
-
-        <a
-            href="index.html"
-            class="agenda-link"
-        >
-
-            <i class="fa-solid fa-arrow-left"></i>
-
-            Voltar à agenda
-
-        </a>
-
+        <div id="status" class="status"></div>
 
     </div>
 
+    <a href="index.html" class="agenda-link">
+        ← Voltar à agenda
+    </a>
 
 </div>
 
-
-
-<!-- =========================
-     JAVASCRIPT
-========================== -->
-
 <script src="backoffice.js"></script>
 
-
 </body>
-
 </html>
