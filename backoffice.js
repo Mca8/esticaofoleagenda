@@ -5,10 +5,6 @@ const CONFIG = {
     file: "festas_general.json"
 };
 
-let dados = {
-    festas: []
-};
-
 
 // =====================================================
 // MESES
@@ -54,7 +50,7 @@ function guardarToken() {
         .trim();
 
     if (!token) {
-        alert("Introduz o token.");
+        alert("Introduz o token GitHub.");
         return;
     }
 
@@ -65,453 +61,199 @@ function guardarToken() {
 
 
 // =====================================================
-// CARREGAR JSON
-// =====================================================
-
-async function carregarJSON() {
-
-    try {
-
-        const response = await fetch(
-            `festas_general.json?v=${Date.now()}`
-        );
-
-        if (!response.ok) {
-            throw new Error("Erro ao carregar festas_general.json");
-        }
-
-        dados = await response.json();
-
-        // Para festas antigas que ainda não tenham "sound"
-        dados.festas.forEach(function(festa) {
-
-            if (typeof festa.sound === "undefined") {
-                festa.sound = false;
-            }
-
-        });
-
-        renderFestas();
-
-    } catch (erro) {
-
-        console.error(erro);
-
-        document.getElementById("status").innerHTML =
-            "❌ Erro ao carregar agenda.";
-
-    }
-
-}
-
-
-// =====================================================
-// MOSTRAR FESTAS
-// =====================================================
-
-function renderFestas() {
-
-    const container = document.getElementById("festas");
-
-    container.innerHTML = "";
-
-    dados.festas.forEach((festa, index) => {
-
-        const div = document.createElement("div");
-
-        div.className = "festa";
-
-        div.innerHTML = `
-
-            <h3>Festa ${index + 1}</h3>
-
-
-            <!-- LOCAL -->
-
-            <label>Local</label>
-
-            <input
-                type="text"
-                value="${festa.local || ""}"
-                onchange="alterar(${index}, 'local', this.value)"
-            >
-
-
-            <!-- DATA -->
-
-            <div class="row">
-
-                <div>
-
-                    <label>Dia</label>
-
-                    <input
-                        type="number"
-                        min="1"
-                        max="31"
-                        value="${festa.day || ""}"
-                        onchange="alterar(${index}, 'day', this.value)"
-                    >
-
-                </div>
-
-
-                <div>
-
-                    <label>Mês</label>
-
-                    <select
-                        onchange="alterarMes(${index}, this.value)"
-                    >
-
-                        ${mesesHTML(festa.month_number)}
-
-                    </select>
-
-                </div>
-
-            </div>
-
-
-            <!-- HORA -->
-
-            <div class="row">
-
-                <div>
-
-                    <label>Hora</label>
-
-                    <input
-                        type="number"
-                        min="0"
-                        max="23"
-                        value="${festa.hour ?? 0}"
-                        onchange="alterarNumero(${index}, 'hour', this.value)"
-                    >
-
-                </div>
-
-
-                <div>
-
-                    <label>Minutos</label>
-
-                    <input
-                        type="number"
-                        min="0"
-                        max="59"
-                        value="${festa.min ?? 0}"
-                        onchange="alterarNumero(${index}, 'min', this.value)"
-                    >
-
-                </div>
-
-            </div>
-
-
-            <!-- JANTAR / FAT -->
-
-            <div class="row">
-
-                <div>
-
-                    <label>Jantar</label>
-
-                    <select
-                        onchange="alterarNumero(${index}, 'dinner', this.value)"
-                    >
-
-                        <option
-                            value="0"
-                            ${festa.dinner == 0 ? "selected" : ""}
-                        >
-                            Não
-                        </option>
-
-                        <option
-                            value="1"
-                            ${festa.dinner == 1 ? "selected" : ""}
-                        >
-                            Sim
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div>
-
-                    <label>FAT</label>
-
-                    <select
-                        onchange="alterarNumero(${index}, 'fat', this.value)"
-                    >
-
-                        <option
-                            value="0"
-                            ${festa.fat == 0 ? "selected" : ""}
-                        >
-                            Não
-                        </option>
-
-                        <option
-                            value="1"
-                            ${festa.fat == 1 ? "selected" : ""}
-                        >
-                            Sim
-                        </option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-
-            <!-- SOM -->
-
-            <label>Som</label>
-
-            <select
-                onchange="alterarBoolean(${index}, 'sound', this.value)"
-            >
-
-                <option
-                    value="true"
-                    ${festa.sound === true ? "selected" : ""}
-                >
-                    🔊 Com som
-                </option>
-
-                <option
-                    value="false"
-                    ${festa.sound === false ? "selected" : ""}
-                >
-                    🔇 Sem som
-                </option>
-
-            </select>
-
-
-            <!-- VALOR -->
-
-            <label>Valor €</label>
-
-            <input
-                type="number"
-                min="0"
-                value="${festa.value ?? 0}"
-                onchange="alterarNumero(${index}, 'value', this.value)"
-            >
-
-
-            <!-- ELIMINAR -->
-
-            <button
-                class="delete"
-                onclick="eliminarFesta(${index})"
-            >
-                Eliminar
-            </button>
-
-        `;
-
-        container.appendChild(div);
-
-    });
-
-}
-
-
-// =====================================================
-// GERAR SELECT DOS MESES
-// =====================================================
-
-function mesesHTML(selected) {
-
-    let html = "";
-
-    for (let i = 1; i <= 12; i++) {
-
-        let nomeVisual = meses[i];
-
-        // No JSON fica "Marco"
-        // No backoffice aparece "Março"
-
-        if (nomeVisual === "Marco") {
-            nomeVisual = "Março";
-        }
-
-        html += `
-
-            <option
-                value="${i}"
-                ${i == selected ? "selected" : ""}
-            >
-                ${nomeVisual}
-            </option>
-
-        `;
-
-    }
-
-    return html;
-
-}
-
-
-// =====================================================
-// ALTERAR TEXTO
-// =====================================================
-
-function alterar(index, campo, valor) {
-
-    dados.festas[index][campo] = valor;
-
-}
-
-
-// =====================================================
-// ALTERAR NÚMERO
-// =====================================================
-
-function alterarNumero(index, campo, valor) {
-
-    dados.festas[index][campo] = Number(valor);
-
-}
-
-
-// =====================================================
-// ALTERAR BOOLEAN
-// =====================================================
-
-function alterarBoolean(index, campo, valor) {
-
-    dados.festas[index][campo] = valor === "true";
-
-}
-
-
-// =====================================================
-// ALTERAR MÊS
-// =====================================================
-
-function alterarMes(index, numero) {
-
-    numero = Number(numero);
-
-    dados.festas[index].month_number = numero;
-
-    dados.festas[index].month = meses[numero];
-
-}
-
-
-// =====================================================
-// ADICIONAR NOVA FESTA
-// =====================================================
-
-function adicionarFesta() {
-
-    dados.festas.push({
-
-        local: "",
-
-        day: "",
-
-        month: "Janeiro",
-
-        month_number: 1,
-
-        dinner: 0,
-
-        hour: 0,
-
-        min: 0,
-
-        fat: 0,
-
-        sound: false,
-
-        value: 0
-
-    });
-
-    renderFestas();
-
-    // Faz scroll para a nova festa
-
-    setTimeout(function() {
-
-        const festas =
-            document.querySelectorAll(".festa");
-
-        if (festas.length > 0) {
-
-            festas[festas.length - 1]
-                .scrollIntoView({
-                    behavior: "smooth"
-                });
-
-        }
-
-    }, 100);
-
-}
-
-
-// =====================================================
-// ELIMINAR FESTA
-// =====================================================
-
-function eliminarFesta(index) {
-
-    const confirmar =
-        confirm(
-            "Tens a certeza que queres eliminar esta festa?"
-        );
-
-    if (!confirmar) {
-        return;
-    }
-
-    dados.festas.splice(index, 1);
-
-    renderFestas();
-
-}
-
-
-// =====================================================
 // UTF-8 -> BASE64
 // =====================================================
 
 function paraBase64(texto) {
 
-    const bytes =
-        new TextEncoder().encode(texto);
+    const bytes = new TextEncoder().encode(texto);
 
     let binary = "";
 
     bytes.forEach(function(byte) {
-
-        binary +=
-            String.fromCharCode(byte);
-
+        binary += String.fromCharCode(byte);
     });
 
     return btoa(binary);
-
 }
 
 
 // =====================================================
-// GUARDAR NO GITHUB
+// LIMPAR FORMULÁRIO
 // =====================================================
 
-async function guardarGitHub() {
+function limparFormulario() {
+
+    document.getElementById("local").value = "";
+    document.getElementById("day").value = "";
+
+    document.getElementById("month").value = "1";
+
+    document.getElementById("hour").value = "0";
+    document.getElementById("min").value = "0";
+
+    document.getElementById("dinner").value = "0";
+    document.getElementById("fat").value = "0";
+    document.getElementById("sound").value = "false";
+
+    document.getElementById("value").value = "0";
+}
+
+
+// =====================================================
+// VALIDAR FORMULÁRIO
+// =====================================================
+
+function validarFormulario() {
+
+    const local = document
+        .getElementById("local")
+        .value
+        .trim();
+
+    const day = Number(
+        document.getElementById("day").value
+    );
+
+    const month = Number(
+        document.getElementById("month").value
+    );
+
+    const hour = Number(
+        document.getElementById("hour").value
+    );
+
+    const min = Number(
+        document.getElementById("min").value
+    );
+
+
+    if (!local) {
+
+        alert("Indica o local da festa.");
+
+        document.getElementById("local").focus();
+
+        return false;
+    }
+
+
+    if (!day || day < 1 || day > 31) {
+
+        alert("Indica um dia válido.");
+
+        document.getElementById("day").focus();
+
+        return false;
+    }
+
+
+    if (month < 1 || month > 12) {
+
+        alert("Indica um mês válido.");
+
+        return false;
+    }
+
+
+    if (hour < 0 || hour > 23) {
+
+        alert("Indica uma hora válida.");
+
+        return false;
+    }
+
+
+    if (min < 0 || min > 59) {
+
+        alert("Indica minutos válidos.");
+
+        return false;
+    }
+
+
+    return true;
+}
+
+
+// =====================================================
+// CRIAR OBJETO DA NOVA FESTA
+// =====================================================
+
+function obterNovaFesta() {
+
+    const monthNumber = Number(
+        document.getElementById("month").value
+    );
+
+    return {
+
+        local:
+            document
+                .getElementById("local")
+                .value
+                .trim(),
+
+        day:
+            document
+                .getElementById("day")
+                .value,
+
+        month:
+            meses[monthNumber],
+
+        month_number:
+            monthNumber,
+
+        dinner:
+            Number(
+                document
+                    .getElementById("dinner")
+                    .value
+            ),
+
+        hour:
+            Number(
+                document
+                    .getElementById("hour")
+                    .value
+            ),
+
+        min:
+            Number(
+                document
+                    .getElementById("min")
+                    .value
+            ),
+
+        fat:
+            Number(
+                document
+                    .getElementById("fat")
+                    .value
+            ),
+
+        sound:
+            document
+                .getElementById("sound")
+                .value === "true",
+
+        value:
+            Number(
+                document
+                    .getElementById("value")
+                    .value
+            )
+
+    };
+}
+
+
+// =====================================================
+// ADICIONAR FESTA AO GITHUB
+// =====================================================
+
+async function adicionarFestaGitHub() {
 
     const status =
         document.getElementById("status");
@@ -523,21 +265,48 @@ async function guardarGitHub() {
             .trim();
 
 
-    // Verificar token
+    // TOKEN
 
     if (!token) {
 
-        alert(
-            "Primeiro tens de colocar o token GitHub."
-        );
+        alert("Primeiro tens de colocar o token GitHub.");
+
+        document
+            .getElementById("githubToken")
+            .focus();
 
         return;
+    }
 
+
+    // VALIDAR FORM
+
+    if (!validarFormulario()) {
+        return;
+    }
+
+
+    const novaFesta = obterNovaFesta();
+
+
+    const confirmar = confirm(
+        "Adicionar esta festa à agenda?\n\n" +
+        novaFesta.day + " - " +
+        (novaFesta.month === "Marco"
+            ? "Março"
+            : novaFesta.month) +
+        "\n" +
+        novaFesta.local
+    );
+
+
+    if (!confirmar) {
+        return;
     }
 
 
     status.innerHTML =
-        "⏳ A guardar alterações...";
+        "⏳ A adicionar festa...";
 
 
     const apiURL =
@@ -548,12 +317,12 @@ async function guardarGitHub() {
 
 
         // =================================================
-        // 1. OBTER O FICHEIRO ATUAL
+        // 1. OBTER JSON ATUAL DO GITHUB
         // =================================================
 
         const atual = await fetch(
 
-            `${apiURL}?ref=${CONFIG.branch}`,
+            `${apiURL}?ref=${CONFIG.branch}&t=${Date.now()}`,
 
             {
 
@@ -574,7 +343,10 @@ async function guardarGitHub() {
 
         if (!atual.ok) {
 
+            const erroAtual = await atual.json();
+
             throw new Error(
+                erroAtual.message ||
                 "Não foi possível obter o ficheiro atual."
             );
 
@@ -586,10 +358,72 @@ async function guardarGitHub() {
 
 
         // =================================================
-        // 2. CRIAR NOVO JSON
+        // 2. DESCODIFICAR CONTEÚDO ATUAL
         // =================================================
 
-        const json =
+        const conteudoBase64 =
+            ficheiroAtual.content.replace(/\n/g, "");
+
+
+        const binary =
+            atob(conteudoBase64);
+
+
+        const bytes =
+            Uint8Array.from(
+                binary,
+                char => char.charCodeAt(0)
+            );
+
+
+        const texto =
+            new TextDecoder().decode(bytes);
+
+
+        const dados =
+            JSON.parse(texto);
+
+
+        // =================================================
+        // 3. GARANTIR QUE EXISTE O ARRAY FESTAS
+        // =================================================
+
+        if (!Array.isArray(dados.festas)) {
+
+            dados.festas = [];
+
+        }
+
+
+        // =================================================
+        // 4. ADICIONAR NOVA FESTA
+        // =================================================
+
+        dados.festas.push(novaFesta);
+
+
+        // =================================================
+        // 5. ORDENAR POR MÊS E DIA
+        // =================================================
+
+        dados.festas.sort(function(a, b) {
+
+            if (a.month_number !== b.month_number) {
+
+                return a.month_number - b.month_number;
+
+            }
+
+            return Number(a.day) - Number(b.day);
+
+        });
+
+
+        // =================================================
+        // 6. GERAR NOVO JSON
+        // =================================================
+
+        const novoJSON =
             JSON.stringify(
                 dados,
                 null,
@@ -598,15 +432,7 @@ async function guardarGitHub() {
 
 
         // =================================================
-        // 3. CONVERTER PARA BASE64
-        // =================================================
-
-        const conteudoBase64 =
-            paraBase64(json);
-
-
-        // =================================================
-        // 4. SUBSTITUIR FICHEIRO NO GITHUB
+        // 7. GUARDAR NO GITHUB
         // =================================================
 
         const response = await fetch(
@@ -634,10 +460,11 @@ async function guardarGitHub() {
                 body: JSON.stringify({
 
                     message:
-                        "Atualização da agenda Estica o Fole",
+                        "Adicionar festa: " +
+                        novaFesta.local,
 
                     content:
-                        conteudoBase64,
+                        paraBase64(novoJSON),
 
                     sha:
                         ficheiroAtual.sha,
@@ -653,7 +480,7 @@ async function guardarGitHub() {
 
 
         // =================================================
-        // 5. VERIFICAR RESPOSTA
+        // 8. VERIFICAR RESPOSTA
         // =================================================
 
         if (!response.ok) {
@@ -663,7 +490,7 @@ async function guardarGitHub() {
 
             throw new Error(
                 erro.message ||
-                "Erro ao atualizar ficheiro."
+                "Não foi possível atualizar o ficheiro."
             );
 
         }
@@ -674,7 +501,10 @@ async function guardarGitHub() {
         // =================================================
 
         status.innerHTML =
-            "✅ Agenda atualizada com sucesso!";
+            "✅ Festa adicionada com sucesso!";
+
+
+        limparFormulario();
 
 
         setTimeout(function() {
@@ -686,13 +516,10 @@ async function guardarGitHub() {
 
     } catch (erro) {
 
-
         console.error(erro);
-
 
         status.innerHTML =
             "❌ Erro: " + erro.message;
-
 
     }
 
@@ -700,9 +527,7 @@ async function guardarGitHub() {
 
 
 // =====================================================
-// INICIAR BACKOFFICE
+// INICIAR
 // =====================================================
 
 carregarToken();
-
-carregarJSON();
