@@ -246,11 +246,11 @@
             "month": "Setembro",
             "month_number": 9,
             "dinner": 0,
-            "hour": 18,
+            "hour": 0,
             "min": 0,
             "fat": 1,
-            "value": 400,
-            "sound": false
+            "sound": false,
+            "value": 400
         },
         {
             "local": "Aveleda - Bragança",
