@@ -238,7 +238,7 @@
             "month_number": 9,
             "dinner": 0,
             "hour": 17,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 500
         },
