@@ -257,12 +257,12 @@
             "day": "12",
             "month": "Setembro",
             "month_number": 9,
-            "dinner": 0,
+            "dinner": 1,
             "hour": 17,
             "min": 0,
             "fat": 1,
             "value": 500,
-            "sound": false
+            "sound": true
         },
         {
             "local": "Castanheiro do Norte",
@@ -274,7 +274,7 @@
             "min": 0,
             "fat": 1,
             "value": 450,
-            "sound": false
+            "sound": true
         }
     ]
 }
