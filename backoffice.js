@@ -35,29 +35,89 @@ let novaFestaAberta = false;
 
 function carregarToken() {
 
-    const token = localStorage.getItem("githubToken");
+    const token =
+        localStorage.getItem("githubToken");
+
+    const input =
+        document.getElementById("githubToken");
+
+    const content =
+        document.getElementById("tokenContent");
+
+    const status =
+        document.getElementById("tokenStatus");
+
+    const arrow =
+        document.getElementById("tokenArrow");
+
 
     if (token) {
-        document.getElementById("githubToken").value = token;
+
+        input.value = token;
+
+        status.innerHTML =
+            '<i class="fa-solid fa-circle-check"></i> Guardado';
+
+        content.classList.add("collapsed");
+
+        arrow.classList.remove("open");
+
+    } else {
+
+        status.innerHTML = "";
+
+        content.classList.remove("collapsed");
+
+        arrow.classList.add("open");
+
     }
 }
 
+function toggleToken() {
+
+    const content =
+        document.getElementById("tokenContent");
+
+    const arrow =
+        document.getElementById("tokenArrow");
+
+    content.classList.toggle("collapsed");
+
+    arrow.classList.toggle("open");
+}
 
 function guardarToken() {
 
-    const token = document
-        .getElementById("githubToken")
-        .value
-        .trim();
+    const token =
+        document
+            .getElementById("githubToken")
+            .value
+            .trim();
 
     if (!token) {
+
         alert("Introduz o token GitHub.");
+
         return;
     }
 
-    localStorage.setItem("githubToken", token);
+    localStorage.setItem(
+        "githubToken",
+        token
+    );
 
-    alert("Token guardado.");
+    document.getElementById("tokenStatus").innerHTML =
+        '<i class="fa-solid fa-circle-check"></i> Guardado';
+
+    document
+        .getElementById("tokenContent")
+        .classList
+        .add("collapsed");
+
+    document
+        .getElementById("tokenArrow")
+        .classList
+        .remove("open");
 }
 
 
