@@ -334,6 +334,7 @@
   span.events__tag.date_big {
     padding: 7px 2px;
     font-size: 18px;
+    width: 170px;
   }
   .events-container {
     clear: both;
