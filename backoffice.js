@@ -157,7 +157,7 @@ function renderLista() {
             </div>
 
             <div class="festa-edit">
-                <i class="fa-solid fa-chevron-right"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
             </div>
         `;
 
