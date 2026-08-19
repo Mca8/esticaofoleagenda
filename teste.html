@@ -112,7 +112,12 @@
         if(f.hour === 0){
           hour = '<span class="events__tag events__tag--highlighted"><i class="fa-solid fa-hourglass" style="font-size: 18px;padding: 0 8px 0 10px;"></i><span style="padding: 0 5px 0 0;">Hora ainda não definida</span></span>';
         }else{
-          hour = '<span class="events__tag date_big">'+f.hour+'H'+f.min+'</span>';
+          if(f.min === 0){
+            hour = '<span class="events__tag date_big">'+f.hour+'H00</span>';
+          }else{
+            hour = '<span class="events__tag date_big">'+f.hour+'H'+f.min+'</span>';
+          }
+          
         }
         if(f.dinner === 0){
           dinner = '';
