@@ -147,7 +147,7 @@ function renderLista() {
             <div class="festa-info">
 
                 <div class="festa-local">
-                    ${escapeHTML(festa.local)}
+                    ${index + 1} - ${escapeHTML(festa.local)}
                 </div>
 
                 <div class="festa-data">
