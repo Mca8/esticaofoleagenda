@@ -262,9 +262,6 @@ function editarFesta(index) {
     document.getElementById("editDinner").value =
         festa.dinner ?? 0;
 
-    document.getElementById("editFat").value =
-        festa.fat ?? 0;
-
     document.getElementById("editSound").value =
         festa.sound === true
             ? "true"
