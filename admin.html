@@ -98,7 +98,11 @@
         if(f.hour === 0){
           hour = '<span class="events__tag events__tag--highlighted"><span>SEM HORA</span></span>';
         }else{
-          hour = '<span class="events__tag date_big">'+f.hour+'H'+f.min+'</span>';
+          if(f.min === 0){
+            hour = '<span class="events__tag date_big">'+f.hour+'H00</span>';
+          }else{
+            hour = '<span class="events__tag date_big">'+f.hour+'H'+f.min+'</span>';
+          }
         }
 
         
