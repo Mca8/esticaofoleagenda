@@ -124,9 +124,14 @@
         }else{
             dinner = '<i class="fa-solid fa-utensils"></i>';
         }
+        if(f.sound === false){
+          sound = '';
+        }else{
+            sound = '<i class="fa-solid fa-drum"></i>';
+        }
 
         
-        var tblRow = '<li class="events__item day-'+f.day+'"><div class="events__item--left"><span class="events__name">'+ f.day +' - '+ f.month +'</span><span class="events__date">'+ f.local +'</span></div><span class="events__tag events__tag--dinner">'+dinner+'</span>'+hour+'</li>';
+        var tblRow = '<li class="events__item day-'+f.day+'"><div class="events__item--left"><span class="events__name">'+ f.day +' - '+ f.month +'</span><span class="events__date">'+ f.local +'</span></div><span class="events__tag events__tag--sound">'+sound+'</span><span class="events__tag events__tag--dinner">'+dinner+'</span>'+hour+'</li>';
 
 
           // ADD to content
