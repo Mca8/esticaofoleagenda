@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Estica o Fole - Admin</title>
+  <title>Admin - Estica o Fole </title>
   <link rel="icon" href="esticaofole-favicon.jpg" sizes="32x32" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -116,17 +116,15 @@
           // Verify dates to last with now date
           if(f.month_number < dateMonth){
             jQuery('.container'+f.month).css('display', 'none');
-            jQuery('.container'+f.month).find('.day-'+f.day).css('display', 'none').addClass('festa-done');
+            jQuery('.containerFestas').find('.day-'+f.day).css('display', 'none').addClass('festa-done');
 
           }else{
             if(f.month_number == dateMonth && f.day <= day){
-              jQuery('.container'+f.month).find('.day-'+f.day).css('display', 'none').addClass('festa-done');
+              jQuery('.containerFestas').find('.day-'+f.day).css('display', 'none').addClass('festa-done');
             }else if(f.month_number == dateMonth && f.day > day){
-              jQuery('.container'+f.month).css('display', 'block');
-              jQuery('.container'+f.month).find('.day-'+f.day).addClass('festa-open');
+              jQuery('.containerFestas').find('.day-'+f.day).addClass('festa-open');
             }else if(f.month_number > dateMonth){
-              jQuery('.container'+f.month).css('display', 'block');
-              jQuery('.container'+f.month).find('.day-'+f.day).addClass('festa-open');
+              jQuery('.containerFestas').find('.day-'+f.day).addClass('festa-open');
             }
           }
 
