@@ -405,6 +405,14 @@ span.events__tag.events__tag--dinner {
     font-size: 28px;
     width: 80px;
 }
+span.events__tag.events__tag--sound {
+    background: transparent;
+    color: #f59e0b;
+    border: 0 !important;
+    box-shadow: none;
+    font-size: 28px;
+    width: 80px;
+}
 .reportorios {
     background: #f0efef;
     margin: 0 0 15px;
