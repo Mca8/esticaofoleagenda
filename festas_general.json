@@ -31,7 +31,7 @@
             "month_number": 5,
             "dinner": 0,
             "hour": 10,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 400,
             "sound": false
@@ -55,7 +55,7 @@
             "month_number": 5,
             "dinner": 0,
             "hour": 16,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 500,
             "sound": false
@@ -67,7 +67,7 @@
             "month_number": 5,
             "dinner": 0,
             "hour": 9,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 400,
             "sound": false
@@ -91,7 +91,7 @@
             "month_number": 6,
             "dinner": 0,
             "hour": 14,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 400,
             "sound": false
@@ -103,7 +103,7 @@
             "month_number": 7,
             "dinner": 0,
             "hour": 21,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 400,
             "sound": false
@@ -115,7 +115,7 @@
             "month_number": 7,
             "dinner": 1,
             "hour": 17,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 450,
             "sound": false
@@ -139,7 +139,7 @@
             "month_number": 8,
             "dinner": 0,
             "hour": 16,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 400,
             "sound": false
@@ -151,7 +151,7 @@
             "month_number": 8,
             "dinner": 0,
             "hour": 17,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 400,
             "sound": false
@@ -163,7 +163,7 @@
             "month_number": 8,
             "dinner": 0,
             "hour": 22,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 500,
             "sound": false
@@ -187,7 +187,7 @@
             "month_number": 8,
             "dinner": 1,
             "hour": 20,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 500,
             "sound": false
@@ -199,7 +199,7 @@
             "month_number": 8,
             "dinner": 0,
             "hour": 19,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 400,
             "sound": false
@@ -223,7 +223,7 @@
             "month_number": 8,
             "dinner": 0,
             "hour": 19,
-            "min": "00",
+            "min": 0,
             "fat": 1,
             "value": 650,
             "sound": false
