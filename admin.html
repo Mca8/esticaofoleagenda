@@ -101,11 +101,9 @@
           hour = '<span class="events__tag date_big">'+f.hour+'H'+f.min+'</span>';
         }
 
-        if(f.fat === 0){
-          fat = '';
-        }else{
-          fat = '<button class="btn" data-value="'+f.value+'"><span class="events__tag date_big fat_block" style="display: block;width:auto;padding:3px 8px;"><i class="fa-solid fa-sack-dollar"></i></span></button>';
-        }
+        
+        var fat = '<button class="btn" data-value="'+f.value+'"><span class="events__tag date_big fat_block" style="display: block;width:auto;padding:3px 8px;"><i class="fa-solid fa-coins"></i></span></button>';
+        
 
         var tblRow = '<li class="events__item '+f.month+' day-'+f.day+'"><div class="events__item--left"><span class="events__name">'+ f.day +' - '+ f.month +'</span><span class="events__date">'+ f.local +'</span></div>'+hour+' '+fat+'</li>';
 
