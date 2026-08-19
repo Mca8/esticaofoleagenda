@@ -368,6 +368,10 @@
 }
   .events__tag--highlighted {
     background: #fdca40;
+    width: 170px;
+    padding: 7px 2px;
+    font-size: 11px;
+    height: 40px;
   }
   .events__item {
     background: #fff;
