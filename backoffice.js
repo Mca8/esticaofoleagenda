@@ -302,7 +302,6 @@ function novaFesta() {
     document.getElementById("editMin").value = 0;
 
     document.getElementById("editDinner").value = 0;
-    document.getElementById("editFat").value = 0;
 
     document.getElementById("editSound").value =
         "false";
@@ -365,10 +364,6 @@ function guardarModal() {
 
         min: Number(
             document.getElementById("editMin").value
-        ),
-
-        fat: Number(
-            document.getElementById("editFat").value
         ),
 
         sound:
