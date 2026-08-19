@@ -244,6 +244,12 @@
     .event_dinner svg {
         fill: #86d8c9;
     }
+    .events__item.festa-done {
+        border-color: #ccc;
+    }
+    .events__item.festa-done span.events__tag.date_big {
+        background: #ccc;
+    }
     @media (max-width:767px){
         .w3-modal-content {
             width: 100% !important;
