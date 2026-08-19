@@ -8,7 +8,434 @@
 
     <link rel="icon" href="esticaofole-favicon.jpg" sizes="32x32">
 
+    <link<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Backoffice - Estica o Fole</title>
+
+    <link rel="icon" href="esticaofole-favicon.jpg" sizes="32x32">
+
     <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 16px;
+            font-family: Montserrat, Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 140px;
+            max-width: 60%;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin: 10px 0 0;
+        }
+
+        .token-box {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 12px 0 5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            height: 46px;
+            padding: 0 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 16px;
+            background: #fff;
+        }
+
+        button {
+            border: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+        }
+
+        .btn-token {
+            width: 100%;
+            margin-top: 10px;
+            padding: 13px;
+            background: #222;
+            color: #fff;
+        }
+
+        .top-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn-add,
+        .btn-save {
+            flex: 1;
+            padding: 14px;
+            color: #fff;
+        }
+
+        .btn-add {
+            background: #222;
+        }
+
+        .btn-save {
+            background: #198754;
+        }
+
+        .lista-festas {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .festa-item {
+            background: #fff;
+            padding: 13px 14px;
+            border-radius: 10px;
+            box-shadow: 0 1px 5px rgba(0,0,0,.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .festa-info {
+            min-width: 0;
+        }
+
+        .festa-local {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .festa-data {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .festa-edit {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .status {
+            text-align: center;
+            margin: 15px 0;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* MODAL */
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            z-index: 9999;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            width: 100%;
+            max-width: 540px;
+            max-height: 92vh;
+            overflow-y: auto;
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .btn-close {
+            width: 38px;
+            height: 38px;
+            background: #eee;
+            font-size: 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .row > div {
+            flex: 1;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-modal-save,
+        .btn-delete {
+            flex: 1;
+            padding: 14px;
+            color: #fff;
+        }
+
+        .btn-modal-save {
+            background: #198754;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+        }
+
+        @media(max-width: 500px) {
+            body {
+                padding: 10px;
+            }
+
+            .top-actions {
+                position: sticky;
+                top: 8px;
+                z-index: 10;
+            }
+
+            .row {
+                gap: 8px;
+            }
+
+            .festa-item {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <img src="logo.png" class="logo" alt="Estica o Fole">
+        <h1>Gestão da Agenda</h1>
+    </div>
+
+    <div class="token-box">
+        <label for="githubToken">Token GitHub</label>
+
+        <input
+            type="password"
+            id="githubToken"
+            placeholder="github_pat_..."
+        >
+
+        <button
+            type="button"
+            class="btn-token"
+            onclick="guardarToken()"
+        >
+            Guardar token
+        </button>
+    </div>
+
+    <div class="top-actions">
+        <button
+            type="button"
+            class="btn-add"
+            onclick="novaFesta()"
+        >
+            <i class="fa-solid fa-plus"></i>
+            Nova festa
+        </button>
+
+        <button
+            type="button"
+            class="btn-save"
+            onclick="guardarGitHub()"
+        >
+            <i class="fa-solid fa-floppy-disk"></i>
+            Guardar
+        </button>
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <div id="listaFestas" class="lista-festas"></div>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div id="modalOverlay" class="modal-overlay">
+
+    <div class="modal">
+
+        <div class="modal-header">
+            <h2 id="modalTitle">Editar Festa</h2>
+
+            <button
+                type="button"
+                class="btn-close"
+                onclick="fecharModal()"
+            >
+                ×
+            </button>
+        </div>
+
+        <label for="editLocal">Local</label>
+        <input type="text" id="editLocal">
+
+        <div class="row">
+            <div>
+                <label for="editDay">Dia</label>
+                <input type="number" id="editDay" min="1" max="31">
+            </div>
+
+            <div>
+                <label for="editMonth">Mês</label>
+                <select id="editMonth">
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label for="editHour">Hora</label>
+                <input type="number" id="editHour" min="0" max="23">
+            </div>
+
+            <div>
+                <label for="editMin">Minutos</label>
+                <input type="number" id="editMin" min="0" max="59">
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <label for="editDinner">Jantar</label>
+                <select id="editDinner">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="editFat">FAT</label>
+                <select id="editFat">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+        </div>
+
+        <label for="editSound">Som</label>
+        <select id="editSound">
+            <option value="false">Sem som</option>
+            <option value="true">Com som</option>
+        </select>
+
+        <label for="editValue">Valor €</label>
+        <input type="number" id="editValue" min="0">
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="btn-delete"
+                id="btnEliminar"
+                onclick="eliminarFestaAtual()"
+            >
+                Eliminar
+            </button>
+
+            <button
+                type="button"
+                class="btn-modal-save"
+                onclick="guardarModal()"
+            >
+                Guardar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="backoffice.js"></script>
+
+</body>
+</html>
         href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700"
         rel="stylesheet"
     >
