@@ -265,6 +265,17 @@
             "sound": false
         },
         {
+            "local": "Franco",
+            "day": "20",
+            "month": "Setembro",
+            "month_number": 9,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "sound": false,
+            "value": 300
+        },
+        {
             "local": "Castanheiro do Norte",
             "day": "04",
             "month": "Outubro",
