@@ -285,6 +285,17 @@
             "fat": 1,
             "value": 450,
             "sound": false
+        },
+        {
+            "local": "Carrazedo de Montenegro",
+            "day": "8",
+            "month": "Novembro",
+            "month_number": 11,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "sound": false,
+            "value": 400
         }
     ]
 }
