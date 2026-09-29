@@ -280,11 +280,10 @@
             "month": "Outubro",
             "month_number": 10,
             "dinner": 0,
-            "hour": 0,
+            "hour": 15,
             "min": 0,
-            "fat": 1,
-            "value": 450,
-            "sound": false
+            "sound": false,
+            "value": 450
         },
         {
             "local": "Carrazedo de Montenegro",
