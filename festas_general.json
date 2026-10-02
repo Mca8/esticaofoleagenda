@@ -286,6 +286,17 @@
             "value": 450
         },
         {
+            "local": "Limaos",
+            "day": "31",
+            "month": "Outubro",
+            "month_number": 10,
+            "dinner": 0,
+            "hour": 15,
+            "min": 0,
+            "sound": false,
+            "value": 500
+        },
+        {
             "local": "Carrazedo de Montenegro",
             "day": "8",
             "month": "Novembro",
