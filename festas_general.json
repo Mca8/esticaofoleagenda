@@ -306,6 +306,17 @@
             "min": 0,
             "sound": false,
             "value": 400
+        },
+        {
+            "local": "Franco",
+            "day": "13",
+            "month": "Dezembro",
+            "month_number": 12,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "sound": false,
+            "value": 300
         }
     ]
 }
