@@ -1,0 +1,40 @@
+{
+    "festas": [
+        {
+            "local": "Quinta de Jales",
+            "day": "12",
+            "month": "Julho",
+            "month_number": 7,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 0,
+            "sound": false
+        },
+        {
+            "local": "Cova da Lua",
+            "day": "01",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 0,
+            "value": 0,
+            "sound": true
+        },
+        {
+            "local": "Dadim",
+            "day": "06",
+            "month": "Agosto",
+            "month_number": 5,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 0,
+            "sound": true
+        }
+    ]
+}
