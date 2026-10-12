@@ -247,7 +247,7 @@
     .events__item.festa-done {
         border-color: #ccc;
     }
-    .events__item.festa-done span.events__tag.date_big {
+    .events__item.festa-done span.events__tag.date_big, .events__item.festa-done span.events__tag--highlighted {
         background: #ccc;
     }
     @media (max-width:767px){
