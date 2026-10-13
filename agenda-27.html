@@ -33,7 +33,7 @@
             <img src="logo.png" class="class-img" alt="Estica o Fole">
           </div>
         </div>
-        <div class="count_festas">
+        <div class="count_festas" style="float: left; padding-bottom: 30px; width: 100%;">
           <ul>
             <li class="align-items-center d-flex justify-center" style="background: #3cb371;">
                 <div style="padding: 10px 5px;">
@@ -139,7 +139,7 @@
           });
       });
 
-      // count_festas_total = count_festas_done + count_festas_open;
+      count_festas_total = count_festas_done + count_festas_open;
 
       jQuery('.count_festas').find('.c-total').text(count_festas_total);
       jQuery('.count_festas').find('.c-done').text(count_festas_done);
