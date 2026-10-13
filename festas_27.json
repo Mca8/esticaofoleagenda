@@ -1,6 +1,18 @@
 {
     "festas": [
         {
+            "local": "Travanca",
+            "day": "27",
+            "month": "Marco",
+            "month_number": 3,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 1,
+            "value": 0,
+            "sound": false
+        },
+        {
             "local": "Quinta de Jales",
             "day": "12",
             "month": "Julho",
