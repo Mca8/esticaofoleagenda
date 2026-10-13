@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Admin - Estica o Fole </title>
+  <title>Estica o Fole - 2027</title>
   <link rel="icon" href="esticaofole-favicon.jpg" sizes="32x32" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -83,6 +83,7 @@
     let count_festas_done = 0;
     let count_festas_open = 0;
     let count_festas_total = 0;
+    // let festas_total_value = 0;
 
 
 
@@ -138,12 +139,12 @@
           });
       });
 
-      count_festas_total = count_festas_done + count_festas_open;
+      // count_festas_total = count_festas_done + count_festas_open;
 
       jQuery('.count_festas').find('.c-total').text(count_festas_total);
       jQuery('.count_festas').find('.c-done').text(count_festas_done);
       jQuery('.count_festas').find('.c-open').text(count_festas_open);
-      jQuery('.count_festas_value span').text(festas_total_value);
+      // jQuery('.count_festas_value span').text(festas_total_value);
 
     });
 
