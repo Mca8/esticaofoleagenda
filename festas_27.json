@@ -59,6 +59,18 @@
             "fat": 1,
             "value": 0,
             "sound": true
+        },
+        {
+            "local": "Cabanas",
+            "day": "12",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 16,
+            "min": 0,
+            "fat": 0,
+            "value": 0,
+            "sound": true
         }
     ]
 }
