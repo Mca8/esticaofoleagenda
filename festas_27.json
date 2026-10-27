@@ -71,6 +71,18 @@
             "fat": 0,
             "value": 0,
             "sound": true
+        },
+        {
+            "local": "Franco",
+            "day": "15",
+            "month": "Agosto",
+            "month_number": 8,
+            "dinner": 0,
+            "hour": 0,
+            "min": 0,
+            "fat": 0,
+            "value": 400,
+            "sound": true
         }
     ]
 }
